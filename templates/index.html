@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="w-full h-full flex items-center justify-center flex-col gap-4">
+  <h1 class="text-5xl font-semibold">Find you seat fast</h1>
+  <p>Book your seat now and enjoy the best experience</p>
+  <div class="flex gap-4 items-center">
+    <select class="peer h-10 w-full pl-3 pr-10 rounded-md border border-gray-200 appearance-none peer:focus:outline-none peer:focus:ring-1 peer:focus:ring-gray-950 dark:border-gray-800">
+      {% for movie in movies %}
+        <option value="{{ movie.id }}">{{ movie.title }}</option>
+      {% endfor %}
+    </select>
+    <button class="inline-flex items-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-black text-white px-4 py-2 h-10 justify-center w-24">Book now</button>
+  </div>
+</section>
+{% endblock %}
