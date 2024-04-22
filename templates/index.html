@@ -9,6 +9,9 @@
       {% for movie in movies %}
         <option value="{{ movie.id }}">{{ movie.title }}</option>
       {% endfor %}
+      {% if movies|length == 0 %}
+        <option value="" disabled>No movies available</option>
+      {% endif %}
     </select>
     <button class="inline-flex items-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-black text-white px-4 py-2 h-10 justify-center w-24">Book now</button>
   </div>
